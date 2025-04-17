@@ -38,3 +38,8 @@ export default {
 
     return new Response(JSON.stringify({ reply }), {
       headers: {
+        "Content-Type": "application/json"
+      }
+    });
+  }
+};
