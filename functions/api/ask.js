@@ -16,7 +16,7 @@ export default {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${env.OPENAI_API_KEY}`,
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         model: "gpt-4",
@@ -37,9 +37,7 @@ export default {
     const reply = data.choices?.[0]?.message?.content || "Sorry, I couldn’t process that.";
 
     return new Response(JSON.stringify({ reply }), {
-      headers: {
-        "Content-Type": "application/json"
-      }
+      headers: { "Content-Type": "application/json" }
     });
   }
 };
